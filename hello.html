@@ -7,6 +7,36 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Hello what happened</h1>
+    <h1>Enter String</h1>
+    <input id="inputString" style="height: 30px; width: 300px;">
+    <button onclick="checkString()">Click Me </button>
+    <script>
+        function checkString(val){
+    if(val.length>0){
+        let valArr = [];
+        for(let i=0;i<val.length;i++){
+            let txt = '' ;
+            for(let j=i;j<val.length;j++)
+            {
+                if(!txt.includes(val[j]))
+                {
+                    txt += val[j] ;
+                }
+             else {
+                 break;
+             }
+
+            }
+            valArr.push(txt.length);
+        }
+        console.log(valArr)
+        return Math.max(...valArr);
+    }
+    else {
+        return 0;
+    }
+    }
+   console.log(checkString("")) 
+     </script>
 </body>
 </html>
